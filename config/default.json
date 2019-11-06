@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://system:system@cluster0-qdibh.mongodb.net/test?retryWrites=true&w=majority"
+    
+}
