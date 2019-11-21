@@ -1,0 +1,108 @@
+*{
+  box-sizing: border-box;
+  margin :0;
+  padding: 0;
+  outline: none;
+  font-family: 'Comfortaa' , cursive;
+  }
+body{
+  background-color: aqua;
+   background-position: center;
+   background-attachment: fixed;
+   background-size: cover;
+ 
+   
+  
+}
+.input-container{
+  width: 1170px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  margin: 20px auto;
+  background-color: white;
+
+
+}
+.footer{
+          width: 1170px;
+      padding: 20px 30px;
+      border-radius: 10px;
+      margin: 20px auto;
+      background-color: white;
+  
+  
+  
+}
+.login{
+  width: auto;
+  padding: 20px 30px;
+  float: right;
+  
+  background-color: white;
+
+
+}
+.input-container label{
+  margin-right:20px;
+  font-size:22px;
+  font-weight:bold; 
+}
+.input-container input{
+  width:500px;
+  height: 20px;
+  background-color: white;
+  border-radius: 7px;
+}
+::placeholder
+{
+  font-weight: bold;
+  color: black;
+}
+.container-clothes{
+  background-color:white ;
+  border-radius: 10px;
+  padding: 20px 30px;
+   margin: auto;
+   width: 1170px;
+   display:flex ;
+   justify-content: space-around;
+   flex-wrap: wrap;
+}
+.container-cloth{
+  border: 1px solid black;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+  margin: 10px;
+}
+.container-cloth :hover{
+box-shadow: -1px 3px 10px 5px rgba(0,0, 0, 0.75);
+cursor: pointer;
+border: none;
+}
+.container-image{
+  height:300px ;
+  width: 300px;
+  
+  background-size: cover;
+
+}
+.clothes-title .year-clothes .Price{
+  margin: 10px;
+}
+.nmn{
+  text-align: left;
+  color: brown;
+  margin-left: 15px ;
+
+}
+.cont
+{
+  background-color: white;
+  background-attachment: fixed;
+ 
+}
+.container
+{
+  border-block-color: black;
+  
+}

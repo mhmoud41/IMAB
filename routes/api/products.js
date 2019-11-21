@@ -3,6 +3,8 @@ const router = express.Router();
 const Product = require('../../models/Product')
 const { check, validationResult } = require('express-validator')
 
+
+
 router.post('/', [
     check('name','Name is required').not().isEmpty(),
     check('price','Price is required').not().isEmpty(),
@@ -18,26 +20,17 @@ const{
     photo,
     description
 } = req.body;
+
 const productFields = {};
-productFields.user = req.name;
+
+
 if(name) productFields.name = name
 if(price) productFields.price = price
 if(description) productFields.description = description
 if(photo) productFields.photo = photo
 
 try {
-    let product = await Product.findOne({ user: req.name });
-
-    if(product){
-        product = await Product.findOneAndUpdate(
-            {user: req.name},
-            {$set: productFields},
-            {new: true}
-        )
-
-        return res.json(product)
-
-    }
+    
 
     product = new Product(productFields)
     await product.save();
@@ -50,14 +43,32 @@ catch (err) {
 })
 router.get('/', async (req, res) => {
     try {
-      const products = await Product.find().populate('product', ['name', 'photo']);
+      const products = await Product.find().populate('product', ['name', 'photo']).select('-description');
       res.json(products);
     } catch (err) {
       console.error(err.message);
   
+      res.uuystatus(500).send('Server Error');
+    }
+  });
+router.get('/:id', async (req, res) => {
+    try {
+      const product = await Product.findById(req.params.id);
+  
+      if (!product) {
+        res.status(404).json({ msg: 'Product not found' });
+      }
+      res.json(product);
+    } catch (err) {
+      console.error(err.message);
+      if (err.kind === 'ObjectId') {
+        res.status(404).json({ msg: 'Product not found' });
+      }
       res.status(500).send('Server Error');
     }
   });
+  
+  
 
 
-module.exports = router;
+module.exports = router;  
