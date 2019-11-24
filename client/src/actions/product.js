@@ -32,7 +32,7 @@ import {
     };
   
     try {
-      const res = await axios.post('/api/product', formData, config);
+      const res = await axios.post('/api/products', formData, config);
   
       dispatch({
         type: ADD_PRODUCT,
@@ -49,7 +49,7 @@ import {
   
   export const getProduct = id => async dispatch => {
     try {
-      const res = await axios.get(`/api/product/${id}`);
+      const res = await axios.get(`/api/products/${id}`);
   
       dispatch({
         type: GET_PRODUCT,

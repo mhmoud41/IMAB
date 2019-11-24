@@ -1,30 +1,55 @@
-import React from 'react'
+import React, {Fragment} from 'react'
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Form from "react-bootstrap/Form";
+import Nav from "react-bootstrap/Nav";
+import FormControl from "react-bootstrap/FormControl";
+import Button from "react-bootstrap/Button";
+import Bootstrap from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.css";
 
-export const Navbar = () => {
-    return (
-        <div className="container-fluid">
-			
-			<div className="site-logo">
-				<img src="img/logo.png" alt="logo"></img>
-			</div>
+export const Navbar1 = () => {
+	return (
+		<Fragment>
+		<Navbar bg="light" expand="lg">
+		<Navbar.Brand href="/" className="IMAB">
+		  IMAB
+		</Navbar.Brand>
+		<Navbar.Toggle aria-controls="basic-navbar-nav" />
+		<Navbar.Collapse id="basic-navbar-nav">
+		  <Nav className="mr-auto">
+			{/* <Nav.Link href="/">Home</Nav.Link> */}
+			{/* <Nav.Link href="#link">Link</Nav.Link> */}
+			<NavDropdown title="Dropdown" id="basic-nav-dropdown">
+			  <NavDropdown.Item href="#LogIN/3.1">LogIN</NavDropdown.Item>
+			  <NavDropdown.Item href="#SignUp/3.2">SignUp</NavDropdown.Item>
+			  <NavDropdown.Item href="#AnimeClothes/3.3">
+				AnimeClothes
+			  </NavDropdown.Item>
+			  {/* <NavDropdown.Divider /> */}
+			  <NavDropdown.Item href="#GamesClothes/3.4">
+				GamesClothes
+			  </NavDropdown.Item>
+			</NavDropdown>
+		  </Nav>
+		  <Form inline>
+			<Form.Control
+			  type="text"
+			  placeholder="what are you looking for..."
+			  onFocus={e => (e.target.placeholder = "")}
+			  onBlur={e =>
+				(e.target.placeholder = "what are you looking for...")
+			  }
+			  className="mr-sm-2"
+			/>
+			<Button variant="outline-success">Search</Button>
+		  </Form>
+		</Navbar.Collapse>
+	  </Navbar>
 
-			<div className="nav-switch">
-				<i className="fa fa-bars"></i>
-			</div>
-			<div className="header-right">
-				<a href="cart.html" className="card-bag"><img src="img/icons/bag.png" alt=""></img><span>2</span></a>
-				<a href="#" className="search"><img src="img/icons/search.png" alt=""></img></a>
-			</div>
-		
-			<ul className="main-menu">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="#">Woman</a></li>
-				<li><a href="#">Man</a></li>
-				<li><a href="#">LookBook</a></li>
-				<li><a href="#">Blog</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-		</div>
-    )
+	  </Fragment>
+	)
 }
-export default Navbar
+export default Navbar1

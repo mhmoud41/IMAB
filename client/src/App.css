@@ -6,7 +6,7 @@
   font-family: 'Comfortaa' , cursive;
   }
 body{
-  background-color: aqua;
+  background-image: url('/images/FB_IMG_1551526212529.jpg');
    background-position: center;
    background-attachment: fixed;
    background-size: cover;
@@ -71,11 +71,11 @@ body{
 .container-cloth{
   border: 1px solid black;
   text-align: center;
+  box-shadow: -1px 3px 10px 5px rgba(0,0, 0, 0.75);
   transition: all 0.4s ease-in-out;
   margin: 10px;
 }
 .container-cloth :hover{
-box-shadow: -1px 3px 10px 5px rgba(0,0, 0, 0.75);
 cursor: pointer;
 border: none;
 }

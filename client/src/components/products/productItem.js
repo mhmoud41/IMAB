@@ -7,20 +7,22 @@ import Moment from 'react-moment';
 const ProductItem = ({
   
   
-  product:{_id,name, photo,discreption,price, date }
+  product:{_id,name, photo,price, date }
   
 }) => (
   
   <div className='container-cloth'>
-    <div>
+    
+      
+    
       <Link to={`/product/${_id}`}>
+      <img className = 'container-image' src = {photo}/>
         
-        <h4 className='clothes-title'>{name}</h4>
       </Link>
 
-    </div>
+    
     <div>
-    <img src = {photo}/>
+    <h4 className='clothes-title'>{name}</h4>
     <p className='price'>{price}</p>
       <p className='post-date'>
         Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>

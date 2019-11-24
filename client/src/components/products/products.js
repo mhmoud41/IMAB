@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Spinner from '../layout/Spinner';
 import ProductItem from './productItem'
 import { getProducts } from '../../actions/product';
@@ -15,10 +16,12 @@ const Products = ({ getProducts, product: { products, loading } }) => {
     ) : (
     <Fragment>
         
-      <h1 className='large text-primary'>Products</h1>
       
+        <Link to='/addproduct' className='btn btn-primary my-1'>
+            addproduct
+          </Link>
       
-      <div className='cont'>
+      <div className='container-clothes'>
       {products.length > 0 ? (
               products.map(product => (
                 <ProductItem key={product.id} product={product} />

@@ -31,7 +31,7 @@ import {
       case ADD_PRODUCT:
         return {
           ...state,
-          products: [payload, ...state.posts],
+          products: [payload, ...state.products],
           loading: false
         };
       case PRODUCT_ERROR:
