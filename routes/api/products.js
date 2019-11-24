@@ -48,7 +48,7 @@ router.get('/', async (req, res) => {
     } catch (err) {
       console.error(err.message);
   
-      res.uuystatus(500).send('Server Error');
+      res.status(500).send('Server Error');
     }
   });
 router.get('/:id', async (req, res) => {
