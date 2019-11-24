@@ -43,7 +43,7 @@ catch (err) {
 })
 router.get('/', async (req, res) => {
     try {
-      const products = await Product.find().populate('product', ['name', 'photo']).select('-description');
+      const products = await Product.find().populate('product', ['name', 'photo']);
       res.json(products);
     } catch (err) {
       console.error(err.message);
